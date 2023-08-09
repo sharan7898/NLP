@@ -153,7 +153,7 @@ The applications of Natural Language Processing are as follows:
 
 There are the following steps to build an NLP pipeline -
 
-1.**Step1:****Sentence Segmentation**
+**Sentence Segmentation**
 
 * Sentence Segment is the first step for building the NLP pipeline. It breaks the paragraph into separate sentences.
 
@@ -384,3 +384,50 @@ In the real world, Agra goes to the Poonam, does not make any sense, so this sen
 
 **For Example:** "Open the door" is interpreted as a request instead of an order.
 
+## Why NLP is difficult?
+
+NLP is difficult because Ambiguity and Uncertainty exist in the language.
+
+* **Ambiguity**
+
+There are the following three ambiguity -
+
+1.**Lexical Ambiguity**
+
+Lexical Ambiguity exists in the presence of two or more possible meanings of the sentence within a single word.
+
+**Example:**
+
+Manya is looking for a match.
+
+In the above example, the word match refers to that either Manya is looking for a partner or Manya is looking for a match. (Cricket or other match)
+
+2.**Syntactic Ambiguity**
+
+Syntactic Ambiguity exists in the presence of two or more possible meanings within the sentence.
+
+**Example:**
+
+I saw the girl with the binocular.
+
+In the above example, did I have the binoculars? Or did the girl have the binoculars?
+
+3.**Referential Ambiguity**
+
+Referential Ambiguity exists when you are referring to something using the pronoun.
+
+**Example:** Kiran went to Sunita. She said, "I am hungry."
+
+In the above sentence, you do not know that who is hungry, either Kiran or Sunita.
+
+* **Variability and Creativity:** People express ideas in diverse ways, using idioms, metaphors, sarcasm, and other creative language forms that can be challenging for NLP models to understand.
+
+**Example:**"It's raining cats and dogs."
+
+Understanding the figurative meaning of the expression "raining cats and dogs."
+
+* **Named Entity Recognition (NER):** Identifying and classifying named entities, such as names, dates, and locations, can be difficult due to variations in formatting, abbreviations, and domain-specific terms.
+
+**Example:** "Apple is releasing a new iPhone."
+
+In the above example, Recognizing "Apple" as a company name, not a fruit.
