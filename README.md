@@ -82,7 +82,7 @@ Now, modern NLP consists of various applications, like speech recognition, machi
 
 ## Components of NLP
 
-**Natural Language Understanding (NLU):**
+1.**Natural Language Understanding (NLU):**
 
 NLU is the component of NLP that focuses on enabling machines to understand and interpret human language. It involves various tasks and techniques aimed at extracting meaning, intent, and context from text or speech. Some key components and tasks of NLU include:
 
@@ -104,7 +104,7 @@ NLU is the component of NLP that focuses on enabling machines to understand and 
 
 **Question Answering**: Developing systems that can provide accurate answers to user questions.
 
-**Natural Language Generation (NLG):**
+2.**Natural Language Generation (NLG):**
 
 NLG is the component of NLP that focuses on generating human-like language from structured data or other forms of input. NLG systems take structured information and convert it into coherent and contextually appropriate text. Some key components and tasks of NLG include:
 
@@ -122,3 +122,96 @@ NLG is the component of NLP that focuses on generating human-like language from 
 
 **Text Paraphrasing**: Expressing the same content in different words while maintaining the original meaning.
 Storytelling: Generating narratives, stories, or creative text.
+
+## Difference between NLU and NLG
+
+| NLU                          | NLG                        |
+|------------------------------|----------------------------|
+|NLU is the process of reading and interpreting language.|NLG is the process of writing or generating language.|
+|Involves extracting meaning, intent, and context from text or speech.|Converts data into coherent, contextually appropriate text.|
+|Tasks include intent recognition, sentiment analysis, entity recognition, and more.|Tasks include text planning, sentence generation, summarization, and more.|
+|Identifies grammatical components like parts of speech (POS) and semantic roles.|Creates grammatically correct and coherent sentences.|
+|Enables the system to "understand" what users are saying or writing.|Enables the system to "generate" meaningful and contextually relevant responses.|
+
+## Applications of NLP
+
+The applications of Natural Language Processing are as follows:
+
+* Text and speech processing like-Voice assistants – Alexa, Siri, etc.
+
+* Text classification like Grammarly, Microsoft Word, and Google Docs
+
+* Information extraction like-Search engines like DuckDuckGo, Google
+
+* Chatbot and Question Answering like:- website bots
+
+* Language Translation like:- Google Translate
+
+* Text summarization 
+
+## How to build an NLP pipeline
+
+There are the following steps to build an NLP pipeline -
+
+1.**Step1:****Sentence Segmentation**
+
+Sentence Segment is the first step for building the NLP pipeline. It breaks the paragraph into separate sentences.The primary goal of sentence segmentation is to divide a paragraph or text document into discrete units of meaning, which are sentences. These sentences can then be analyzed, processed, and used as individual units for various NLP tasks such as sentiment analysis, machine translation, summarization, and more.
+
+**Example:**
+
+**Consider the text**: "I enjoy reading books. They transport me to different worlds!"
+
+After sentence segmentation, the output would be:
+
+* "I enjoy reading books."
+
+* "They transport me to different worlds!"
+
+**How Segmentation works**
+
+**Punctuation Detection:** The most common method for sentence segmentation involves identifying punctuation marks that typically indicate the end of a sentence, such as periods, exclamation points, and question marks.
+
+**Abbreviation Handling:** Some punctuation marks, like periods, can also appear within abbreviations or acronyms. Advanced sentence segmentation algorithms take this into account and make exceptions for such cases.
+
+**Contextual Information:** Some punctuation marks, like periods, can have multiple meanings in different contexts (e.g., "Mr." in "Mr. Smith" vs. "The U.S."). Contextual analysis and language modeling can help disambiguate these cases.
+
+**Non-standard Language:** Sentence segmentation becomes challenging in cases where the text contains non-standard language, incomplete sentences, or unconventional punctuation usage. Handling these cases may require more advanced techniques.
+
+**Machine Learning:** Machine learning approaches can be used to train models that predict sentence boundaries based on patterns in the data. These models can be trained on labeled datasets where sentences are annotated.
+
+###  Word Tokenization
+
+Tokenization is a foundational task in Natural Language Processing (NLP) that involves breaking down a continuous stream of text, often a sentence or paragraph, into individual units called tokens. In the context of word tokenization, tokens are typically words, although they can also be subword units in certain languages or applications.
+
+**Example:**
+
+**Consider the sentence:** "The quick brown fox jumps over the lazy dog."
+
+After word tokenization, the tokens would be:
+
+"The"
+"quick"
+"brown"
+"fox"
+"jumps"
+"over"
+"the"
+"lazy"
+"dog"
+
+Word tokenization is a fundamental step in NLP pipelines, as it forms the basis for subsequent analysis and processing of textual data.
+
+**Here's how word tokenization works:**
+
+**Whitespace Splitting:** The simplest form of word tokenization involves splitting the text based on whitespace (spaces, tabs, newlines). Each chunk of characters separated by whitespace is considered a token. This method works for many languages, where words are separated by spaces.
+
+**Punctuation Handling:** Punctuation marks, such as commas, periods, and semicolons, are often considered as separate tokens. However, some punctuation marks may be attached to words, like apostrophes in contractions ("can't"). Careful handling of punctuation is necessary.
+
+**Hyphenated Words:** Hyphenated words like "mother-in-law" can be split into multiple tokens or kept as a single token, depending on the specific application and linguistic rules.
+
+**Non-standard Language:** Word tokenization becomes more challenging when dealing with informal language, slang, abbreviations, and non-standard writing styles. These cases may require customized rules or language-specific models.
+
+**Subword Tokenization:** In some cases, words can be split into subword units, like morphemes or characters. Subword tokenization is often used in languages with complex morphology or in applications like machine translation.
+
+
+
