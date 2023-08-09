@@ -155,7 +155,11 @@ There are the following steps to build an NLP pipeline -
 
 1.**Step1:****Sentence Segmentation**
 
-Sentence Segment is the first step for building the NLP pipeline. It breaks the paragraph into separate sentences.The primary goal of sentence segmentation is to divide a paragraph or text document into discrete units of meaning, which are sentences. These sentences can then be analyzed, processed, and used as individual units for various NLP tasks such as sentiment analysis, machine translation, summarization, and more.
+* Sentence Segment is the first step for building the NLP pipeline. It breaks the paragraph into separate sentences.
+
+* The primary goal of sentence segmentation is to divide a paragraph or text document into discrete units of meaning, which are sentences. 
+
+* These sentences can then be analyzed, processed, and used as individual units for various NLP tasks such as sentiment analysis, machine translation, summarization, and more.
 
 **Example:**
 
@@ -169,19 +173,21 @@ After sentence segmentation, the output would be:
 
 **How Segmentation works**
 
-**Punctuation Detection:** The most common method for sentence segmentation involves identifying punctuation marks that typically indicate the end of a sentence, such as periods, exclamation points, and question marks.
+1.**Punctuation Detection:** The most common method for sentence segmentation involves identifying punctuation marks that typically indicate the end of a sentence, such as periods, exclamation points, and question marks.
 
-**Abbreviation Handling:** Some punctuation marks, like periods, can also appear within abbreviations or acronyms. Advanced sentence segmentation algorithms take this into account and make exceptions for such cases.
+2.**Abbreviation Handling:** Some punctuation marks, like periods, can also appear within abbreviations or acronyms. Advanced sentence segmentation algorithms take this into account and make exceptions for such cases.
 
-**Contextual Information:** Some punctuation marks, like periods, can have multiple meanings in different contexts (e.g., "Mr." in "Mr. Smith" vs. "The U.S."). Contextual analysis and language modeling can help disambiguate these cases.
+3.**Contextual Information:** Some punctuation marks, like periods, can have multiple meanings in different contexts (e.g., "Mr." in "Mr. Smith" vs. "The U.S."). Contextual analysis and language modeling can help disambiguate these cases.
 
-**Non-standard Language:** Sentence segmentation becomes challenging in cases where the text contains non-standard language, incomplete sentences, or unconventional punctuation usage. Handling these cases may require more advanced techniques.
+4.**Non-standard Language:** Sentence segmentation becomes challenging in cases where the text contains non-standard language, incomplete sentences, or unconventional punctuation usage. Handling these cases may require more advanced techniques.
 
-**Machine Learning:** Machine learning approaches can be used to train models that predict sentence boundaries based on patterns in the data. These models can be trained on labeled datasets where sentences are annotated.
+5.**Machine Learning:** Machine learning approaches can be used to train models that predict sentence boundaries based on patterns in the data. These models can be trained on labeled datasets where sentences are annotated.
 
 ###  Word Tokenization
 
-Tokenization is a foundational task in Natural Language Processing (NLP) that involves breaking down a continuous stream of text, often a sentence or paragraph, into individual units called tokens. In the context of word tokenization, tokens are typically words, although they can also be subword units in certain languages or applications.
+* Tokenization is a foundational task in Natural Language Processing (NLP) that involves breaking down a continuous stream of text, often a sentence or paragraph, into individual units called tokens. 
+
+* In the context of word tokenization, tokens are typically words, although they can also be subword units in certain languages or applications.
 
 **Example:**
 
@@ -203,15 +209,178 @@ Word tokenization is a fundamental step in NLP pipelines, as it forms the basis 
 
 **Here's how word tokenization works:**
 
-**Whitespace Splitting:** The simplest form of word tokenization involves splitting the text based on whitespace (spaces, tabs, newlines). Each chunk of characters separated by whitespace is considered a token. This method works for many languages, where words are separated by spaces.
+1.**Whitespace Splitting:** The simplest form of word tokenization involves splitting the text based on whitespace (spaces, tabs, newlines). Each chunk of characters separated by whitespace is considered a token. This method works for many languages, where words are separated by spaces.
 
-**Punctuation Handling:** Punctuation marks, such as commas, periods, and semicolons, are often considered as separate tokens. However, some punctuation marks may be attached to words, like apostrophes in contractions ("can't"). Careful handling of punctuation is necessary.
+2.**Punctuation Handling:** Punctuation marks, such as commas, periods, and semicolons, are often considered as separate tokens. However, some punctuation marks may be attached to words, like apostrophes in contractions ("can't"). Careful handling of punctuation is necessary.
 
-**Hyphenated Words:** Hyphenated words like "mother-in-law" can be split into multiple tokens or kept as a single token, depending on the specific application and linguistic rules.
+3.**Hyphenated Words:** Hyphenated words like "mother-in-law" can be split into multiple tokens or kept as a single token, depending on the specific application and linguistic rules.
 
-**Non-standard Language:** Word tokenization becomes more challenging when dealing with informal language, slang, abbreviations, and non-standard writing styles. These cases may require customized rules or language-specific models.
+4.**Non-standard Language:** Word tokenization becomes more challenging when dealing with informal language, slang, abbreviations, and non-standard writing styles. These cases may require customized rules or language-specific models.
 
-**Subword Tokenization:** In some cases, words can be split into subword units, like morphemes or characters. Subword tokenization is often used in languages with complex morphology or in applications like machine translation.
+5.**Subword Tokenization:** In some cases, words can be split into subword units, like morphemes or characters. Subword tokenization is often used in languages with complex morphology or in applications like machine translation.
+
+### Stemming
+
+* Stemming is used to normalize words into its base form or root form.
+
+* Stemming involves removing suffixes or prefixes from words, which are often morphological variations that convey tense, number, gender, or other grammatical aspects. 
+
+* By reducing words to their stems, stemming can help consolidate related words and increase the likelihood of matching similar words in information retrieval and search applications.
 
 
+**Example:**
+
+**Consider the words:** "running," "runs," "ran"
+
+A stemming algorithm might reduce these words to the common stem "run," which helps treat these variations as the same word during analysis.
+
+It's important to note that stemming is a heuristic approach, and while it can be useful for certain tasks, it may not always produce perfect results.
+
+**Here's how stemming works:**
+
+1.**Suffix Stripping:** Stemming algorithms typically focus on removing suffixes from words. Suffixes are the parts of a word that appear at the end and often indicate tense or grammatical variations. For example, the word "jumps" would be stemmed to "jump" by removing the "s" suffix.
+
+2.**Prefix Stripping (Optional):** Some stemming algorithms also consider removing prefixes, which appear at the beginning of words. Prefixes are less common in English, but they might be relevant in other languages.
+
+3.**Language-Specific Rules:** Different languages have different grammatical rules, so stemming algorithms need to be tailored to each language. For example, a stemming algorithm for English might not work well for languages with complex inflections like Spanish or Arabic.
+
+4.**Over-Stemming and Under-Stemming:** Stemming algorithms can sometimes produce over-stemming (reducing words too aggressively, leading to loss of meaning) or under-stemming (not reducing words enough, leading to incorrect consolidation).
+
+### Lemmatization
+
+* Lemmatization is quite similar to the Stamming. 
+
+* It is used to group different inflected forms of the word, called Lemma. 
+
+* The main difference between Stemming and lemmatization is that it produces the root word, which has a meaning.
+
+**Example:**
+
+**Consider the words:** "running," "runs," "ran"
+
+A lemmatization algorithm might reduce these words to the common lemma "run," which accurately captures their shared meaning.
+
+**Here's how lemmatization works:**
+
+1.**Dictionary Lookup:** Lemmatization relies on a linguistic database (dictionary or lexicon) that maps words to their corresponding lemmas. These lemmas represent the base or canonical form of each word.
+
+2.**Part-of-Speech Tagging:** Lemmatization takes into account the part of speech (POS) of a word. Different lemmas might be generated based on whether the word is a noun, verb, adjective, or adverb.
+
+3.**Morphological Analysis:** Lemmatization considers the word's morphology (structure and form) to determine the appropriate lemma. This involves identifying and removing prefixes and suffixes while keeping the core root of the word intact.
+
+4.**Language-Specific Rules:** Just like stemming, lemmatization algorithms need to be tailored to each language's grammatical rules. Different languages have different inflectional patterns.
+
+### Identifying Stop Words
+
+* Identifying stop words is a crucial preprocessing step in Natural Language Processing (NLP) that involves identifying and removing common words that typically don't carry significant meaning in a given language. 
+
+* These words, known as stop words, include frequently occurring words like articles, prepositions, pronouns, and conjunctions.
+
+* The primary goal of identifying and removing stop words is to reduce the dimensionality of the data and focus on the more informative words that contribute to the overall meaning of the text. 
+
+**Example:**
+
+**Consider the sentence:** "The quick brown fox jumps over the lazy dog."
+
+After removing stop words (assuming "the" and "over" are stop words), the sentence becomes: "quick brown fox jumps lazy dog."
+
+**Here's how identifying stop words works:**
+
+1.**Stop Word Lists:** Stop words are language-specific and are typically compiled into lists. These lists include words that are considered common and less meaningful in a particular language. Examples of stop words in English include "the," "is," "and," "of," "in," and "to."
+
+2.**Filtering:** During preprocessing, text data is tokenized into words. Each word is compared to the stop word list. If the word matches any word in the list, it is considered a stop word and is often removed from the text.
+
+3.**Contextual Considerations:** In some cases, stop word removal might involve considering the context. For example, the word "not" might be a stop word, but its presence or absence can drastically alter the meaning of a sentence. Therefore, careful consideration is needed in such cases.
+
+###  Dependency Parsing
+
+* Dependency parsing is a fundamental task in Natural Language Processing (NLP) that involves analyzing the grammatical structure of a sentence to determine the syntactic relationships between words. 
+
+* The output of a dependency parsing process is a syntactic tree or graph that represents how words in a sentence are connected and depend on each other.
+
+* In dependency parsing, each word in the sentence is treated as a node in the syntactic tree, and the relationships between words are represented as labeled directed edges (dependencies) between these nodes. 
+
+* These dependencies typically indicate grammatical roles and relationships, such as subject, object, modifier, and more.
+
+**Example:**
+
+**Consider the sentence:** "The cat chased the mouse."
+
+**A dependency parse might represent the relationships as:**
+
+* "chased" is the root of the sentence.
+
+* "chased" is connected to "cat" with the label "nsubj" (nominal subject).
+
+* "chased" is connected to "mouse" with the label "dobj" (direct object).
+
+### POS Tags and NER
+
+* POS stands for parts of speech, which includes Noun, verb, adverb, and Adjective. 
+
+* It indicates that how a word functions with its meaning as well as grammatically within the sentences. A word has one or more parts of speech based on the context in which it is used.
+
+**Example:** 
+
+**Consider the sentence:**"Google" something on the Internet.
+
+In the above example, Google is used as a verb, although it is a proper noun.
+
+**Named Entity Recognition (NER)**
+
+Named Entity Recognition (NER) is the process of detecting the named entity such as person name, movie name, organization name, or location.
+
+**Example:**
+
+**Consider the sentence:** "Apple Inc. is planning to open a new store in Paris next month."
+
+In NER, the identified named entities would be:
+
+* Organization: "Apple Inc."
+
+* Location: "Paris"
+
+* Date: "next month"
+
+## Phases of NLP
+
+![phases](/images/Phases-of-Natural-Language-Processing.png)
+
+**Lexical Analysis:**
+
+* Lexical analysis, also known as tokenization, is the process of breaking down a continuous stream of text into individual units called tokens. 
+
+* Tokens are the basic building blocks of language and can be words, subwords, or symbols. Lexical analysis is the first step in NLP pipelines and is essential for various language processing tasks.
+
+**Syntactic Analysis** (Parsing)
+
+* Syntactic Analysis is used to check grammar, word arrangements, and shows the relationship among the words.
+
+* The goal of syntactic analysis is to understand how words are organized in a sentence and how they contribute to the overall meaning.
+
+**Example:** Agra goes to the Poonam
+
+In the real world, Agra goes to the Poonam, does not make any sense, so this sentence is rejected by the Syntactic analyzer.
+
+**Semantic Analysis**
+
+* Semantic analysis is concerned with the meaning representation. It mainly focuses on the literal meaning of words, phrases, and sentences.
+
+*  It involves extracting and representing the intended meaning of words, phrases, and sentences, allowing computers to comprehend the context, relationships, and nuances conveyed by human language.
+
+**Discourse Integration**
+
+* Discourse Integration depends upon the sentences that proceeds it and also invokes the meaning of the sentences that follow it.
+
+* Focuses on understanding the coherence and flow of language beyond the level of individual sentences. 
+ 
+* It involves analyzing the relationships between sentences and larger text units to uncover the connections, transitions, and logical structures that create a unified discourse.
+
+**Pragmatic Analysis**
+
+* Pragmatic is the fifth and last phase of NLP. It helps you to discover the intended effect by applying a set of rules that characterize cooperative dialogues.
+
+* Pragmatics is concerned with the social, cultural, and contextual aspects of language that influence communication and interpretation.
+
+**For Example:** "Open the door" is interpreted as a request instead of an order.
 
